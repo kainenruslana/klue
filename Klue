@@ -1,0 +1,55 @@
+
+if getgenv then
+    if getgenv().KlueOutdatedUI then return end
+    getgenv().KlueOutdatedUI = true
+end
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local PlayerGui = player:WaitForChild("PlayerGui")
+
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "KlueOutdatedUI"
+screenGui.ResetOnSpawn = false
+screenGui.IgnoreGuiInset = true
+screenGui.Parent = PlayerGui
+
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(1, 0, 1, 0)
+frame.Position = UDim2.new(0, 0, 0, 0)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+frame.BorderSizePixel = 0
+frame.Parent = screenGui
+
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, -40, 1, -40)
+textLabel.Position = UDim2.new(0, 20, 0, 20)
+textLabel.BackgroundTransparency = 1
+textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+textLabel.TextScaled = true
+textLabel.Font = Enum.Font.SourceSansBold
+textLabel.TextWrapped = true
+textLabel.Text = "Outdated version please head to scriptblox or discord.gg/PQcNPDx7DG\n\nTo get the updated version of Klue!"
+textLabel.Parent = frame
+
+
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0, 40, 0, 40)
+closeButton.Position = UDim2.new(1, -50, 0, 10)
+closeButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.TextScaled = true
+closeButton.Font = Enum.Font.SourceSansBold
+closeButton.Text = "X"
+closeButton.Parent = frame
+
+
+closeButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+    if getgenv then
+        getgenv().KlueOutdatedUI = nil
+    end
+end)
