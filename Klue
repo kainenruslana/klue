@@ -32,7 +32,7 @@ textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 textLabel.TextScaled = true
 textLabel.Font = Enum.Font.SourceSansBold
 textLabel.TextWrapped = true
-textLabel.Text = "Outdated version please head to scriptblox or discord.gg/PQcNPDx7DG\n\nTo get the updated version of Klue!"
+textLabel.Text = "Outdated version please head to scriptblox or discord.gg/459dzHpXyS\n\nTo get the updated version of Klue!"
 textLabel.Parent = frame
 
 
